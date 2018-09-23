@@ -1,0 +1,35 @@
+<html>
+<head>
+</head>
+<body>
+  <div>
+    <h1> Welcome to Quote Tracker!</h1><br />
+    <fieldset>
+      <legend>Here are your quotes!</legend>
+    </fieldset>
+  </div>
+  <br />
+  <div>
+    <!--Only need form tag when submitting data. #xxx="ngForm" Creates an Angular Form-->
+    <form (ngSubmit)="addQuote()">
+      <fieldset>
+        <legend>Submit a Quote!</legend>
+        <label>Author:</label>
+        <input type="text" [(ngModel)]="newQuote.author" name="author" /><br />
+        <label>Quote:</label>
+        <input type="text" [(ngModel)]="newQuote.text" name="text" /><br />
+        <button type="submit">Submit</button>
+      </fieldset>
+    </form>
+  </div>
+  <br />
+  <div>
+    <fieldset>
+      <legend>Random Quote!</legend>
+      <button (click)="getRandomQuote()">Generate Random Quote</button>
+      <p>{{randomQuote.author}} : {{randomQuote.text}} </p>
+    </fieldset>
+  </div>
+</body>
+</html>
+
