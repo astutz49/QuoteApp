@@ -11,6 +11,6 @@ namespace Data
 
         }
 
-        public DbSet<Quote> Qoutes { get; set; }
+        public DbSet<Quote> Quotes { get; set; }
     }
 }

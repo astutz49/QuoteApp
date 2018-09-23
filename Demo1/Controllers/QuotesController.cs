@@ -23,7 +23,7 @@ namespace QuoteApp.Controllers
         [HttpPost("")]
         public void AddQuote([FromBody] Quote quote)
         {
-            _context.Qoutes.Add(quote);
+            _context.Quotes.Add(quote);
             _context.SaveChanges();
         }
 
@@ -31,14 +31,14 @@ namespace QuoteApp.Controllers
         public Quote GetRandomQuote()
         {
             var rng = new Random();
-            int randnum = rng.Next(_context.Qoutes.Count());
-            return _context.Qoutes.ToArray()[randnum];
+            int randnum = rng.Next(_context.Quotes.Count());
+            return _context.Quotes.ToArray()[randnum];
         }
 
         [HttpGet("")]
         public IEnumerable<Quote> GetAllQuotes()
         { 
-            return _context.Qoutes;
+            return _context.Quotes;
         }
 
 
